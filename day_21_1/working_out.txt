@@ -1,0 +1,21 @@
+dairy:2x mxmxvkd --kfcds-- sqjhc --nhms-- --sbzzf-- --trh-- fvjkl  
+fish: 2x mxmxvkd --kfcds-- 2x sqjhc --nhms-- --sbzzf--  
+soy: sqjhc fvjkl --sbzzf--
+
+mxmxvkd: dairy | fish
+sqjhc: fish | soy
+fvjkl: soy
+
+map allergen -> Vec<Sentences>
+type Sentence = Vec<Ingredient>;
+type Ingredient= string;
+
+HashMap<Allergen, HashSet<Ingredient>>;
+
+HashSet<Ingredient>
+
+1. when a new allegern appears, add it to list of allergens, with all ingredients from this line
+2. when the allergen reappears, retain ingredients in list that are also present on this ingredients
+-- STOP P1 --
+3. find ingredient that maps to only one allergen, remove from other allergenrs
+4. repeat 3 until all ingredients map to one allergen
